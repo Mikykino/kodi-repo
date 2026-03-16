@@ -36,3 +36,12 @@ with open("zips/addons.xml.md5", "w") as f:
     f.write(md5)
 
 print("Done: addons.xml + addons.xml.md5 generated")
+# Generate index.html for zips directory
+zip_files = [f for f in os.listdir(ZIPS_DIR) if f.endswith('.zip')]
+with open("zips/index.html", "w") as f:
+    f.write("<html><body>\n")
+    f.write('<a href="addons.xml">addons.xml</a><br>\n')
+    f.write('<a href="addons.xml.md5">addons.xml.md5</a><br>\n')
+    for z in sorted(zip_files):
+        f.write(f'<a href="{z}">{z}</a><br>\n')
+    f.write("</body></html>\n")
