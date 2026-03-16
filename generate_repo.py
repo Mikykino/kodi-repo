@@ -17,8 +17,12 @@ for addon_id in os.listdir(ADDONS_DIR):
     version = root.get("version")
     addons_xml_root.append(root)
 
+    # ZIP do podsložky addon_id
+    addon_zip_dir = os.path.join(ZIPS_DIR, addon_id)
+    os.makedirs(addon_zip_dir, exist_ok=True)
+
     zip_name = f"{addon_id}-{version}.zip"
-    zip_path = os.path.join(ZIPS_DIR, zip_name)
+    zip_path = os.path.join(addon_zip_dir, zip_name)
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for dirpath, _, files in os.walk(addon_path):
             for f in files:
@@ -35,13 +39,14 @@ md5 = hashlib.md5(addons_xml_str.encode()).hexdigest()
 with open("zips/addons.xml.md5", "w") as f:
     f.write(md5)
 
-print("Done: addons.xml + addons.xml.md5 generated")
 # Generate index.html for zips directory
-zip_files = [f for f in os.listdir(ZIPS_DIR) if f.endswith('.zip')]
 with open("zips/index.html", "w") as f:
     f.write("<html><body>\n")
     f.write('<a href="addons.xml">addons.xml</a><br>\n')
     f.write('<a href="addons.xml.md5">addons.xml.md5</a><br>\n')
-    for z in sorted(zip_files):
-        f.write(f'<a href="{z}">{z}</a><br>\n')
+    for d in sorted(os.listdir(ZIPS_DIR)):
+        if os.path.isdir(os.path.join(ZIPS_DIR, d)):
+            f.write(f'<a href="{d}/">{d}/</a><br>\n')
     f.write("</body></html>\n")
+
+print("Done: addons.xml + addons.xml.md5 generated")
