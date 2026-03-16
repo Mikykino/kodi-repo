@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.streamspy"
+       name="StreamSpy"
+       version="1.0.0"
+       provider-name="Miky">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+        <import addon="script.module.unidecode" version="1.0.0"/>
+    </requires>
+
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="cs">Webshare + Hellspy – filmy a seriály</summary>
+        <description lang="cs">Kombinovaný addon pro Webshare.cz a Hellspy.to. Hledej na obou zdrojích najednou.</description>
+        <platform>all</platform>
+        <license>GPL v2</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <news>v1.0.0 - StreamSpy, Webshare + Hellspy</news>
+    </extension>
+
+</addon>

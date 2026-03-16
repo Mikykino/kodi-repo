@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+    <category label="Webshare">
+        <setting label="Povolit Webshare" id="ws_enabled" type="bool" default="true" />
+        <setting label="Uživatelské jméno" id="wsuser" type="text" default="" />
+        <setting label="Heslo" id="wspass" type="text" option="hidden" default="" />
+        <setting label="Token (automaticky)" id="ws_token" type="text" visible="false" default="" />
+        <setting label="Token timestamp" id="ws_token_ts" type="text" visible="false" default="" />
+        <setting label="VIP status" id="vip_status" type="text" visible="false" default="" />
+        <setting label="VIP do" id="vip_until" type="text" visible="false" default="" />
+        <setting label="Tried VIP" id="tried_vip" type="text" visible="false" default="false" />
+    </category>
+
+    <category label="Hellspy">
+        <setting label="Povolit Hellspy" id="hs_enabled" type="bool" default="true" />
+        <setting label="Řazení výsledků Hellspy" id="hs_sort" type="select"
+                 lvalues="Relevance|Velikost ↓|Název A-Z|Délka ↓"
+                 values="relevance|size|title|duration" default="size" />
+        <setting type="lsep" label="Přihlášení (volitelné)" />
+        <setting label="Uživatelské jméno" id="hsuser" type="text" default="" />
+        <setting label="Heslo" id="hspass" type="text" option="hidden" default="" />
+    </category>
+
+    <category label="Vyhledávání">
+        <setting label="Minimální velikost souboru (MB)" id="min_size_mb" type="number" default="150" />
+        <setting label="Výchozí filtr kvality" id="default_quality" type="select"
+                 lvalues="Vše|Jen CZ/SK|Jen 4K|Jen 1080p|Jen 720p"
+                 values="all|cz|4k|1080p|720p" default="all" />
+        <setting label="Výchozí řazení výsledků" id="default_sort" type="select"
+                 lvalues="Relevance|Velikost ↓|Nejnovější|Název A-Z"
+                 values="score|size|date|name" default="score" />
+    </category>
+
+    <category label="Přehrávání">
+        <setting label="Nabídnout přehrání dalšího dílu" id="autonext" type="bool" default="true" />
+        <setting label="Preferovaný zdroj pro další díl" id="autonext_source" type="select"
+                 lvalues="Webshare|Hellspy|Automaticky (stejný zdroj)"
+                 values="ws|hs|auto" default="auto" />
+    </category>
+
+    <category label="TMDB">
+        <setting label="TMDB API klíč" id="tmdb_key" type="text" default="" />
+    </category>
+
+    <category label="Titulky">
+        <setting label="OpenSubtitles API klíč" id="opensub_key" type="text" default="" />
+    </category>
+
+    <category label="Interní">
+        <setting label="Poslední hledání" id="slast" type="text" visible="false" default="" />
+    </category>
+
+</settings>
