@@ -1,31 +1,22 @@
 name: Build Kodi Repository
-
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'addons/**'
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-
       - name: Generate repository
         run: python generate_repo.py
-
       - name: Commit and push
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add zips/ addons.xml.md5 2>/dev/null || true
-          git add -f zips/addons.xml zips/addons.xml.md5 2>/dev/null || true
           git add zips/
           git commit -m "Auto-build repo" || echo "Nothing to commit"
           git push
