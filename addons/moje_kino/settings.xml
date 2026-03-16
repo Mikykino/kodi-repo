@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <category label="Přihlášení">
+        <setting id="disclaimer_accepted" type="text" default="false" visible="false"/>
+
+        <setting type="lsep" label="Webshare účet" />
+        <setting label="Uživatelské jméno" id="wsuser" type="text" default="" />
+        <setting label="Heslo" id="wspass" type="text" default="" option="hidden" />
+        <setting id="token" type="text" visible="false" />
+        <setting id="token_ts" type="text" visible="false" default="0"/>
+        <setting id="vip_status" type="text" visible="false" default=""/>
+        <setting id="vip_until" type="text" visible="false" default=""/>
+        <setting id="tried_vip" type="text" visible="false" default="false"/>
+    </category>
+
+    <category label="Přehrávání">
+        <setting type="lsep" label="Kvalita a řazení výsledků" />
+        <setting label="Výchozí kvalita" id="default_quality" type="select"
+                 lvalues="Vše|Jen CZ/SK|Jen 4K|Jen 1080p|Jen 720p"
+                 values="all|cz|4k|1080p|720p" default="all" />
+        <setting label="Výchozí řazení" id="default_sort" type="select"
+                 lvalues="Relevance|Velikost ↓|Nejnovější|Název A-Z"
+                 values="score|size|date|name" default="score" />
+        <setting label="Minimální velikost souboru (MB)" id="min_size_mb" type="number" default="150" />
+
+        <setting type="lsep" label="Seriály" />
+        <setting label="Nabídnout přehrání dalšího dílu" id="autonext" type="bool" default="true" />
+    </category>
+
+    <category label="Vyhledávání">
+        <setting type="lsep" label="Parametry hledání" />
+        <setting label="Kategorie" id="scategory" type="select" lvalues="30012|30013|30014|30015|30016|30017|30018" default="1"/>
+        <setting label="Řazení výsledků API" id="ssort" type="select" lvalues="30021|30022|30023|30024|30025" default="0"/>
+        <setting label="Počet výsledků" id="slimit" type="number" default="25" />
+        <setting label="Počet položek v historii" id="shistory" type="number" default="20"/>
+        <setting id="slast" type="text" visible="false" default="%#NONE#%"/>
+    </category>
+
+    <category label="TMDB">
+        <setting type="lsep" label="The Movie Database" />
+        <setting label="TMDB API klíč" id="tmdb_key" type="text" default="" />
+    </category>
+
+    <category label="Titulky">
+        <setting type="lsep" label="OpenSubtitles" />
+        <setting label="OpenSubtitles API klíč" id="opensub_key" type="text" default="" />
+    </category>
+
+    <category label="Stahování">
+        <setting type="lsep" label="Složka pro stahování" />
+        <setting label="Složka" id="dfolder" type="folder" default="" />
+        <setting label="Normalizovat název souboru" id="dnormalize" type="bool" default="true" />
+        <setting label="Notifikace o průběhu" id="dnotify" type="bool" default="true" />
+    </category>
+</settings>
