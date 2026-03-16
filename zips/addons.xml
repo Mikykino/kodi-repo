@@ -1,4 +1,27 @@
-<addons><addon id="script.module.requests" name="requests" version="2.31.0" provider-name="Python Software Foundation">
+<addons><addon id="plugin.video.moje_kino" name="Moje Kino" version="1.0.0" provider-name="Miky">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="script.module.requests" version="2.18.4" />
+        <import addon="script.module.unidecode" version="0.4.16" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="cs_CZ">Mojekino soukromé kino pro Webshare</summary>
+        <description lang="cs_CZ">Upravený vyhledávač s prioritou CZ obsahu a TMDB integrací.</description>
+        
+        <disclaimer lang="cs_CZ">Tento doplněk neposkytuje žádný obsah. Doplněk je pouze rozhraním pro služby třetích stran (Webshare a TMDB). Použití je výhradně na vlastní odpovědnost uživatele. Autor není spojen s provozovateli úložišť a neodpovídá za legálnost prohlíženého obsahu.</disclaimer>
+        <disclaimer lang="en_GB">This add-on does not provide any content. It is only an interface for third-party services (Webshare and TMDB). Use is at the user's own risk. The author is not affiliated with the storage providers and is not responsible for the legality of the accessed content.</disclaimer>
+        
+        <language>cs</language>
+        <platform>all</platform>
+        <license>AGPL 3.0</license>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon><addon id="script.module.requests" name="requests" version="2.31.0" provider-name="Python Software Foundation">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.certifi" version="2023.5.7" />
@@ -67,27 +90,4 @@
     </dir>
   </extension>
   <extension point="xbmc.python.module" library="." />
-</addon><addon id="plugin.video.moje_kino" name="Moje Kino" version="1.0.0" provider-name="Miky">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" version="2.18.4" />
-        <import addon="script.module.unidecode" version="0.4.16" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="cs_CZ">Mojekino soukromé kino pro Webshare</summary>
-        <description lang="cs_CZ">Upravený vyhledávač s prioritou CZ obsahu a TMDB integrací.</description>
-        
-        <disclaimer lang="cs_CZ">Tento doplněk neposkytuje žádný obsah. Doplněk je pouze rozhraním pro služby třetích stran (Webshare a TMDB). Použití je výhradně na vlastní odpovědnost uživatele. Autor není spojen s provozovateli úložišť a neodpovídá za legálnost prohlíženého obsahu.</disclaimer>
-        <disclaimer lang="en_GB">This add-on does not provide any content. It is only an interface for third-party services (Webshare and TMDB). Use is at the user's own risk. The author is not affiliated with the storage providers and is not responsible for the legality of the accessed content.</disclaimer>
-        
-        <language>cs</language>
-        <platform>all</platform>
-        <license>AGPL 3.0</license>
-        <assets>
-            <icon>icon.png</icon>
-        </assets>
-    </extension>
 </addon></addons>
