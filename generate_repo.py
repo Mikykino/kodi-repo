@@ -52,4 +52,4 @@ with open("zips/index.html", "w") as f:
         f.write(f'<a href="{z}">{z}</a><br>\n')
     f.write("</body></html>\n")
 
-print("Don
+print("Done: addons.xml + addons.xml.md5 generated")
